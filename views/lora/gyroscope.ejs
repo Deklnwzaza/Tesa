@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../head %>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body class="container">
+<header>
+    <% include ../header %>
+</header>
+<main>
+    <div class="container">
+        <h1>Team 40</h1>
+        <%if (data[0].gyroscope.length != 0){ %>
+        <h1>Gyroscope</h1>
+        <table style="width:100%">
+            <tr>
+                <th>sensID</th>
+                <th>val_x</th>
+                <th>val_y</th>
+                <th>val_z</th>
+                <th>date</th>
+            </tr>
+            <tr>
+                <td><%= data[0].gyroscope[0].sensID %></td>
+                <td><%= data[0].gyroscope[0].val_x %></td>
+                <td><%= data[0].gyroscope[0].val_y %></td>
+                <td><%= data[0].gyroscope[0].val_z %></td>
+                <td><%= data[0].gyroscope[0].date %></td>
+            </tr>
+
+        </table>
+        <% } %>
+
+
+
+    </div>
+</main>
+<footer>
+    <% include ../footer %>
+</footer>
+
+</body>
+</html>

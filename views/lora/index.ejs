@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../head %>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body class="container">
+<header>
+    <% include ../header %>
+</header>
+<main>
+    <div class="container">
+        <h1>Team 40</h1>
+        <h1>Temperature</h1>
+        <table style="width:100%">
+            <tr>
+                <th>sensID</th>
+                <th>val</th>
+                <th>date</th>
+            </tr>
+            <tr>
+                <td><%= data.temperature.data[0].sensID %></td>
+                <td><%= data.temperature.data[0].val %></td>
+                <td><%= data.temperature.data[0].date %></td>
+            </tr>
+
+        </table>
+
+        <h1>Humidity</h1>
+        <table style="width:100%">
+            <tr>
+                <th>sensID</th>
+                <th>val</th>
+                <th>date</th>
+            </tr>
+            <tr>
+                <td><%= data.humidity.data[0].sensID %></td>
+                <td><%= data.humidity.data[0].val %></td>
+                <td><%= data.humidity.data[0].date %></td>
+            </tr>
+
+        </table>
+
+        <h1>Pressure</h1>
+        <table style="width:100%">
+            <tr>
+                <th>sensID</th>
+                <th>val</th>
+                <th>date</th>
+            </tr>
+            <tr>
+                <td><%= data.pressure.data[0].sensID %></td>
+                <td><%= data.pressure.data[0].val %></td>
+                <td><%= data.pressure.data[0].date %></td>
+            </tr>
+
+        </table>
+
+        <h1>Magnetometer</h1>
+        <table style="width:100%">
+            <tr>
+                <th>sensID</th>
+                <th>val_x</th>
+                <th>val_y</th>
+                <th>val_z</th>
+                <th>date</th>
+            </tr>
+            <tr>
+                <td><%= data.magnetometer.data[0].sens_id %></td>
+                <td><%= data.magnetometer.data[0].val_x %></td>
+                <td><%= data.magnetometer.data[0].val_y %></td>
+                <td><%= data.magnetometer.data[0].val_z %></td>
+                <td><%= data.magnetometer.data[0].date %></td>
+            </tr>
+
+        </table>
+
+        <h1>Accelerometer</h1>
+        <table style="width:100%">
+            <tr>
+                <th>sensID</th>
+                <th>val_x</th>
+                <th>val_y</th>
+                <th>val_z</th>
+                <th>date</th>
+            </tr>
+            <tr>
+                <td><%= data.accelerometer.data[0].sensID %></td>
+                <td><%= data.accelerometer.data[0].val_x %></td>
+                <td><%= data.accelerometer.data[0].val_y %></td>
+                <td><%= data.accelerometer.data[0].val_z %></td>
+                <td><%= data.accelerometer.data[0].date %></td>
+            </tr>
+
+        </table>
+
+        <h1>Gyroscope</h1>
+        <table style="width:100%">
+            <tr>
+                <th>sensID</th>
+                <th>val_x</th>
+                <th>val_y</th>
+                <th>val_z</th>
+                <th>date</th>
+            </tr>
+            <tr>
+                <td><%= data.gyroscope.data[0].sensID %></td>
+                <td><%= data.gyroscope.data[0].val_x %></td>
+                <td><%= data.gyroscope.data[0].val_y %></td>
+                <td><%= data.gyroscope.data[0].val_z %></td>
+                <td><%= data.gyroscope.data[0].date %></td>
+            </tr>
+
+        </table>
+
+    </div>
+</main>
+<footer>
+    <% include ../footer %>
+</footer>
+
+</body>
+</html>
