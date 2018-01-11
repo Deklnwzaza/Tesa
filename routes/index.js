@@ -3,6 +3,9 @@ var router = express.Router();
 var http = require('http');
 var async = require('async');
 var request = require('request');
+var mongoose = require('mongoose');
+var lora = require('../models/Lora')
+var alert = mongoose.model('alert');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -10,8 +13,27 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/alert', function(req, res, next) {
-    res.render('lora/alert', { team_id: req.body.team_id, description: req.body.description });
+    var tmp = {teamID: req.body.team_id, description: req.body.description};
+    var data = new alert(tmp);
+    data.save(function(err, result){
+        if (err) throw(err);
+        console.log(err);
+        return res.send(result);
+    });
+
 });
+
+router.get('/alert', function(req, res, next) {
+    alert.find({}).sort({date: 'desc'}).exec(function (err, alert) {
+        if (err) {
+            console.log("Error:", err);
+        }
+        else {
+            res.render('lora/alert', { data: alert});
+        }
+    });
+});
+
 
 /*router.get('/', function(req, res, next) {
     function getData(url, callback) {

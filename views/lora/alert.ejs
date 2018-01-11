@@ -19,10 +19,27 @@
 </header>
 <main>
   <div class="container">
-    <h1>Team <%= team_id %></h1>
-    <div class="jumbotron">
-      <%= description %>
-    </div>
+    <% if(data.length != 0) {%>
+    <% for(var i = 0; i < data.length; ++i) { %>
+    <table style="width:100%">
+      <tr>
+        <th>No.</th>
+        <th>teamID</th>
+        <th>description</th>
+        <th>date</th>
+      </tr>
+        <% for(var i = 0; i < data.length; ++i) {%>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%= data[i].teamID %></td>
+        <td><%= data[i].description %></td>
+        <td><%= data[i].date %></td>
+      </tr>
+        <% } %>
+
+    </table>
+    <% } %>
+    <%}%>
   </div>
 </main>
 <footer>
